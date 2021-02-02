@@ -28,14 +28,14 @@ $ sudo mv kustomize /usr/local/bin/
 ```
 $ ansible-galaxy collection install community.kubernetes
 $ ansible-galaxy install tosin2013.quarkus_cafe_demo_role
-$ export DOMAIN=ocp4.example.com
-$ export OCP_TOKEN=123456789
+$ export DOMAIN=$(oc config current-context | cut -d/ -f2 | tr - . | cut -d: -f1 | cut -d. -f2-)
+$ export OCP_TOKEN=$(oc whoami -t)
 $ export GROUP=$(id -gn)
 $ export POSTGRES_PASSWORD=123456789
 $ export STORE_ID=ATLANTA
 $ cat >deploy-quarkus-cafe.yml<<YAML
 - hosts: localhost
-  become: yes
+  become: no
   vars:
     openshift_token: ${OCP_TOKEN}
     openshift_url: https://api.${DOMAIN}:6443
