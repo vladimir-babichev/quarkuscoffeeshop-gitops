@@ -16,3 +16,5 @@ spec:
               value:  http://quarkuscoffeeshop-web-quarkuscoffeeshop-demo.apps.ot8q35bx.westeurope.aroapp.io/dashboard/stream
             - name: CORS_ORIGINS
               value: http://quarkuscoffeeshop-demo.apps.ot8q35bx.westeurope.aroapp.io
+            - name: STORE_ID
+              value: ATLANTA
