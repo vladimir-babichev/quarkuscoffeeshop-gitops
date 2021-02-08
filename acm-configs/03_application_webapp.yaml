@@ -1,12 +1,12 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: quarkus-cafe-app     
+  name: quarkus-cafe-app
   namespace: quarkus-cafe-demo
 spec:
   selector:
     matchExpressions:
-      - key: deployment  
+      - key: deployment
         operator: In
         values:
         - quarkus-cafe-app
